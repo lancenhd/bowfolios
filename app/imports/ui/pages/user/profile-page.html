@@ -1,6 +1,6 @@
 <template name="Profile_Page">
 
-{{#if Template.subscriptionsReady}}
+  {{#if Template.subscriptionsReady}}
 
   <div class="ui text container segment">
     <div class="ui dividing header">
@@ -15,7 +15,8 @@
       </div>
 
       <div class="field">
-        {{> Text_Form_Control label="Title" placeholder="Student" value=profile.title errorMessage=(fieldError "title")}}
+        {{> Text_Form_Control label="Title" placeholder="Location" value=profile.location errorMessage=(fieldError "location")}}
+        {{> Text_Form_Control label="Location" placeholder="Location" value=profile.title errorMessage=(fieldError "title")}}
         {{> Text_Form_Control label="Picture" placeholder="http://foo.com/shot.jpg" value=profile.picture errorMessage=(fieldError "picture")}}
       </div>
 
@@ -36,9 +37,9 @@
 
       <button class="ui primary button" type="submit">Submit</button>
       {{#if displaySuccessMessage}}
-        <div class="ui success message">
-          <p>Profile data successfully updated.</p>
-        </div>
+      <div class="ui success message">
+        <p>Profile data successfully updated.</p>
+      </div>
       {{/if}}
     </form>
   </div>
